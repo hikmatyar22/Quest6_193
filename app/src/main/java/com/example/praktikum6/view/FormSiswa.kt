@@ -42,11 +42,52 @@ fun FormIsian(
                 )
             )
         }
-    ){
+    ){ isiRuang ->
+        Column(modifier = Modifier.padding(isiRuang),
+            verticalArrangement = Arrangement.Top,
+            horizontalAlignment = Alignment.CenterHorizontally) {
+            OutlinedTextField(
+                value = "",
+                singleLine = true,
+                modifier = Modifier
+                    .padding(top = 20.dp)
+                    .width(250.dp),
+                label = { Text(text = "nama_lengkap") },
+                onValueChange = {}
+            )
+            HorizontalDivider(
+                modifier = Modifier
+                    .padding(all = 20.dp)
+                    .width(width = 250.dp), thickness = Thickness, color = Color.Red
+            )
 
+            Row {
+                jenisK.forEach {
+                        item->
+                    Row (verticalAlignment = Alignment.CenterVertically){
+                        RadioButton(
+                            selected = false,
+                            onClick = {}
+                        )
+                        Text(text = item)
+                    }
+                }
 
-
-
+            }
+            HorizontalDivider(modifier = Modifier
+                .padding(top = 20.dp)
+                .width(250.dp),
+                thickness = 1.dp,
+                color = Color.Red
+            )
+            OutlinedTextField(
+                value = "",
+                singleLine = true,
+                modifier = Modifier
+                    .width(250.dp),
+                label = {Text(text = "Alamat")},
+                onValueChange = {}
+            )
 
         }
     }
